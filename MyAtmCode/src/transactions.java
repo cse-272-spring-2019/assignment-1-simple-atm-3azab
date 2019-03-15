@@ -44,7 +44,6 @@ public String getPrevious(){
 	index--;
 	if(index<0)
 		index=-1;
-	System.out.println(index-1);
 	if(index<0) {
 		return "No Previous History";
 	}
@@ -54,7 +53,6 @@ public String getNext() {
 	index++;
 	if(index>arrtrans.size())
 		index=arrtrans.size();
-	System.out.println(index+1);
 	if(index>=arrtrans.size())
 		return "No Next History";
 	else
