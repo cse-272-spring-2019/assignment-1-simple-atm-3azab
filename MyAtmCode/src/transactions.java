@@ -12,7 +12,8 @@ public void addtoHist(String a,double b) {
 	if (arrtrans.size()==6) {
 		arrtrans.remove(0);
 	}
-	index=arrtrans.size()-1;
+	index=arrtrans.size();
+	System.out.println(index);
 }
 public boolean withDrValid(double amount,double balance) {
 	boolean validation =false;
@@ -40,18 +41,23 @@ public double balanceInq()
 	return us.getBalance();	
 }
 public String getPrevious(){
-	
-	if(index<=0) {
+	index--;
+	if(index<0)
+		index=-1;
+	System.out.println(index-1);
+	if(index<0) {
 		return "No Previous History";
 	}
-	index--;
 	return arrtrans.get(index);
 }
 public String getNext() {
-	if(index>=arrtrans.size()||index==arrtrans.size()-1)
+	index++;
+	if(index>arrtrans.size())
+		index=arrtrans.size();
+	System.out.println(index+1);
+	if(index>=arrtrans.size())
 		return "No Next History";
 	else
-		index++;
-		return arrtrans.get(index-1);
+		return arrtrans.get(index);
 }
 }

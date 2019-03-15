@@ -115,7 +115,6 @@ public class Deposit {
 		submit.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle (ActionEvent event) {
 				String amcash = cashTF.getText();
-			
 				double money = Double.parseDouble(amcash);
 				tr.DepositBalance(money);
 				cashTF.setText("");

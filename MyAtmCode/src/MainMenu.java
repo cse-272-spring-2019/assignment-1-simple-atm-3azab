@@ -43,21 +43,23 @@ public void drawMain() {
 	gridpane.add(logout, 70, 70);
 	Withdraw.setOnAction(new EventHandler<ActionEvent>(){
 		public void handle (ActionEvent event) {
+			history.setText("");
 			stage.setScene(withpg.getScene());
 		}
 	});
 	Deposit.setOnAction(new EventHandler<ActionEvent>(){
 		public void handle (ActionEvent event) {
+			history.setText("");
 			stage.setScene(deposit.getScene());
 		}
 	});
 	BalanceInquiry.setOnAction(new EventHandler<ActionEvent>(){
 		public void handle (ActionEvent event) {
+			tr.balanceInq();
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Balance Inquiry");
 			alert.setHeaderText(null);
 			String money = String.valueOf(tr.balanceInq());
-			tr.balanceInq();
 			alert.setContentText("Your balance is : "+money);
 			alert.showAndWait();
 		}
